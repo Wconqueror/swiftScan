@@ -52,9 +52,16 @@ open class LBXScanViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         // [self.view addSubview:_qRScanView];
+         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_black")?.withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(backAction))
         view.backgroundColor = UIColor.black
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
     }
+     
+   @objc func backAction(){
+     dismiss(animated: true)
+   }
+   
 
     open func setNeedCodeImage(needCodeImg: Bool) {
         isNeedCodeImage = needCodeImg
